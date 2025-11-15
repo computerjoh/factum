@@ -1,11 +1,328 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import StaffGrid from "../components/StaffGrid.astro";
+import { Image } from "astro:assets";
+import heroImage from "../assets/gym.webp";
+import staffPlaceholder from "../assets/staff-placeholder.png";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const navLinks = [
+	{ label: "About", href: "#main" },
+	{ label: "Services", href: "#services" },
+	{ label: "Facility", href: "#facility" },
+	{ label: "Staff", href: "#staff" },
+	{ label: "Contact", href: "#contact" },
+];
+
+const services = [
+	{
+		title: "1:1 Training",
+		copy: "Work with a Certified Personal Trainer and receive individualized attention, expert guidance, and tailored workout plans to reach your personal goals.",
+	},
+	{
+		title: "Small Group Training",
+		copy: "Work with a Certified Trainer in a small group setting to push your limits, stay accountable, and celebrate successes as a team.",
+	},
+	{
+		title: "Sport Specific Training",
+		copy: "Work with a Certified Trainer for sport-specific 1:1 or small group sessions to maximize speed, build strength, and boost performance.",
+	},
+	{
+		title: "Injury Rehabilitation",
+		copy: "Work with an Injury Rehabilitation Specialist to regain strength, mobility, and confidence.",
+	},
+	{
+		title: "Pilates",
+		copy: "Work with a Certified Pilates Instructor to improve core strength, flexibility, and body awareness.",
+	},
+	{
+		title: "Nutrition",
+		copy: "Work with a Registered Dietician and Certified Sports Nutritionist to receive personalized nutrition guidance tailored to your goals.",
+	},
+	{
+		title: "Counselling",
+		copy: "Work with a Licensed Professional Counselor.",
+	},
+];
+
+const slides = Array.from({ length: 8 }, (_, i) => `Slide ${i + 1}`);
+
+const staff = [
+	{
+		name: "Adam McLaughlin",
+		title: "Co-Owner and Certified Trainer",
+		photo: staffPlaceholder,
+	},
+	{
+		name: "Tyler Havens",
+		title: "Co-Owner and CertifiedTrainer",
+		photo: staffPlaceholder,
+	},
+	{
+		name: "Francisco Padilla",
+		title: "Registered Dietician and Certified Sports Nutritionist",
+		photo: staffPlaceholder,
+	},
+	{
+		name: "Kara Marshall",
+		title: "Licensed Professional Counselor",
+		photo: staffPlaceholder,
+	},
+	{
+		name: "Tayler Schaller",
+		title: "Certified Personal Trainer",
+		photo: staffPlaceholder,
+	},
+];
+
+const gallery = Array.from({ length: 6 }, (_, i) => ({
+	src: `https://placehold.co/800x500?text=Facility+${i + 1}`,
+	label: `Facility ${i + 1}`,
+}));
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+	title="Factum Performance and Wellness"
+	description="Join Factum to achieve greatness with training, nutrition, and wellness services built to fortify your potential."
+>
+	<a
+		href="#main"
+		class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:bg-white/10 focus:text-white focus:px-4 focus:py-2 focus:rounded-md"
+		>Skip to Content</a
+	>
+
+	<Navbar
+		navLinks={navLinks}
+		instagramUrl="https://www.instagram.com/factum_performance/"
+		instagramHandle="@factum_performance"
+	/>
+	<main id="main">
+			<section
+				class="relative isolate overflow-hidden border-b border-slate-200"
+			>
+				<Image
+					src={heroImage}
+					alt="Athlete training at the gym"
+					class="absolute inset-0 h-full w-full object-cover"
+					loading="eager"
+					sizes="100vw"
+				/>
+			<div
+				class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/10"
+			>
+			</div>
+			<div
+				class="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 py-24 sm:px-6 sm:py-28 lg:px-0 lg:py-32 min-h-[85vh]"
+			>
+				<div class="max-w-3xl space-y-6 text-white">
+					<p
+						class="inline-flex items-center gap-3 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em]"
+					>
+						Achieve greatness
+						<span class="h-1.5 w-1.5 rounded-full bg-rose-400"
+						></span>
+						Fortify your potential
+					</p>
+					<h1
+						class="text-4xl font-semibold leading-tight sm:text-5xl"
+					>
+						Join the all-In-One Performance and Wellness Gym
+					</h1>
+					<p class="text-lg text-white/80">
+						Improve your health. Optimize your potential. Factum
+						combines elite training, recovery, and nutrition under
+						one roof.
+					</p>
+					<div class="flex flex-wrap items-center gap-4">
+						<a
+							href="#contact"
+							class="rounded-full bg-rose-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-rose-500/25 transition hover:bg-rose-500"
+							>Contact us</a
+						>
+						<a
+							href="#services"
+							class="rounded-full border border-white/60 px-6 py-3 text-sm font-semibold text-white transition hover:border-white"
+							>Explore services</a
+						>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section
+			id="services"
+			class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-0"
+		>
+			<div
+				class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between"
+			>
+				<div>
+					<p
+						class="text-xs font-semibold uppercase tracking-[0.2em] text-rose-600"
+					>
+						Our Services
+					</p>
+					<h2
+						class="text-3xl font-semibold text-slate-900 sm:text-4xl"
+					>
+						Programs built for every athlete
+					</h2>
+				</div>
+			</div>
+			<div
+				class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+			>
+				{
+					services.map((service) => (
+						<div class="flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white p-0 shadow-lg shadow-slate-200 transition hover:-translate-y-1 hover:border-rose-300 hover:shadow-rose-200/80">
+							<img
+								src={`https://placehold.co/600x320?text=${encodeURIComponent(service.title)}`}
+								alt={service.title}
+								class="h-44 w-full object-cover"
+								loading="lazy"
+							/>
+							<div class="p-6 space-y-3">
+								<p class="text-sm font-semibold uppercase tracking-[0.2em] text-rose-600">
+									{service.title}
+								</p>
+								<p class="text-sm text-slate-700">
+									{service.copy}
+								</p>
+							</div>
+						</div>
+					))
+				}
+			</div>
+		</section>
+
+		<section
+			id="facility"
+			class="mx-auto max-w-6xl px-4 pb-8 sm:px-6 lg:px-0"
+		>
+			<div
+				class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between"
+			>
+				<div>
+					<p
+						class="text-xs font-semibold uppercase tracking-[0.2em] text-rose-600"
+					>
+						Inside Factum
+					</p>
+					<h2
+						class="text-3xl font-semibold text-slate-900 sm:text-4xl"
+					>
+						Spaces built to perform
+					</h2>
+				</div>
+				<p class="text-sm text-slate-600">
+					Placeholder imagery now; swap in your facility shots.
+				</p>
+			</div>
+			<div
+				class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+			>
+				{
+					gallery.map((item) => (
+						<div class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg shadow-rose-100">
+							<img
+								src={item.src}
+								alt={item.label}
+								class="h-48 w-full object-cover"
+								loading="lazy"
+							/>
+							<div class="p-4">
+								<p class="text-sm font-semibold text-slate-800">
+									{item.label}
+								</p>
+							</div>
+						</div>
+					))
+				}
+			</div>
+		</section>
+
+			<section
+				class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-0"
+				id="staff"
+			>
+				<div
+				class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between"
+			>
+				<div>
+					<p
+						class="text-xs font-semibold uppercase tracking-[0.2em] text-rose-600"
+					>
+						Our Staff
+					</p>
+					<h2
+						class="text-3xl font-semibold text-slate-900 sm:text-4xl"
+					>
+						Meet the people guiding your next win
+					</h2>
+				</div>
+				<p class="text-sm text-slate-600">
+					Certified. Caring. Ready to push you.
+				</p>
+			</div>
+				<div
+					class="mt-10"
+				>
+					<StaffGrid staff={staff} />
+				</div>
+			</section>
+
+		<section
+			class="border-y border-slate-200 bg-slate-50 py-16"
+			id="contact"
+		>
+			<div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-0">
+				<div
+					class="rounded-3xl border border-slate-200 bg-white p-8 shadow-2xl shadow-rose-100"
+				>
+					<div
+						class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between"
+					>
+						<div class="space-y-3">
+							<p
+								class="text-xs font-semibold uppercase tracking-[0.2em] text-rose-600"
+							>
+								Contact
+							</p>
+							<h2
+								class="text-3xl font-semibold text-slate-900 sm:text-4xl"
+							>
+								Factum Performance and Wellness
+							</h2>
+							<div class="space-y-2 text-sm text-slate-700">
+								<p class="font-semibold text-slate-900">
+									Highland place 1
+								</p>
+								<p>
+									8085 South Chester Street Unit 240<br />
+									Centennial, Colorado 80112
+								</p>
+							</div>
+							<div class="space-y-1 text-sm text-slate-700">
+								<p class="font-semibold text-slate-900">
+									CONTACT
+								</p>
+								<a
+									class="block text-rose-600 hover:text-rose-700"
+									href="mailto:FactumPW@gmail.com"
+								>
+									FactumPW@gmail.com
+								</a>
+								<a
+									class="block text-rose-600 hover:text-rose-700"
+									href="tel:+18603243373"
+								>
+									(860) 324 3373
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
 </Layout>
