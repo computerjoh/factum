@@ -1,5 +1,6 @@
 ---
 import "../assets/app.css";
+import { ClientRouter } from "astro:transitions";
 
 const {
 	title = "Factum Performance and Wellness",
@@ -16,6 +17,7 @@ const {
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		<ClientRouter />
 	</head>
 	<body class="bg-white text-slate-900 font-sans antialiased min-h-screen">
 		<slot />

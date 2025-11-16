@@ -36,12 +36,6 @@ const formattedUpdatedDate = post.data.updatedDate?.toLocaleDateString(
 	title={`${post.data.title} | Factum Performance and Wellness`}
 	description={post.data.description}
 >
-	<a
-		href="#main"
-		class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:bg-white/10 focus:text-white focus:px-4 focus:py-2 focus:rounded-md"
-		>Skip to Content</a
-	>
-
 	<Navbar navLinks={navLinks} />
 
 	<main id="main" class="scroll-mt-28">
@@ -57,12 +51,17 @@ const formattedUpdatedDate = post.data.updatedDate?.toLocaleDateString(
 				<h1 class="text-4xl font-semibold leading-tight sm:text-5xl">
 					{post.data.title}
 				</h1>
-				<div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+				<div
+					class="flex flex-wrap items-center gap-3 text-sm text-slate-600"
+				>
 					<span>{formattedPubDate}</span>
 					{
 						formattedUpdatedDate && (
 							<>
-								<span aria-hidden="true" class="h-1 w-1 rounded-full bg-slate-300"></span>
+								<span
+									aria-hidden="true"
+									class="h-1 w-1 rounded-full bg-slate-300"
+								/>
 								<span>Updated {formattedUpdatedDate}</span>
 							</>
 						)
@@ -70,7 +69,10 @@ const formattedUpdatedDate = post.data.updatedDate?.toLocaleDateString(
 					{
 						post.data.author && (
 							<>
-								<span aria-hidden="true" class="h-1 w-1 rounded-full bg-slate-300"></span>
+								<span
+									aria-hidden="true"
+									class="h-1 w-1 rounded-full bg-slate-300"
+								/>
 								<span>{post.data.author}</span>
 							</>
 						)
@@ -91,7 +93,9 @@ const formattedUpdatedDate = post.data.updatedDate?.toLocaleDateString(
 		</section>
 
 		<section class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-0 lg:py-20">
-			<article class="prose prose-lg sm:prose-xl prose-slate prose-headings:text-slate-900 max-w-none">
+			<article
+				class="prose prose-lg sm:prose-xl prose-slate prose-headings:text-slate-900 max-w-none"
+			>
 				<Content />
 			</article>
 		</section>

@@ -20,14 +20,7 @@ const formatDate = (date: Date) =>
 	title="Blog | Factum Performance and Wellness"
 	description="Insights, updates, and stories from the Factum Performance and Wellness team."
 >
-	<a
-		href="#main"
-		class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:bg-white/10 focus:text-white focus:px-4 focus:py-2 focus:rounded-md"
-		>Skip to Content</a
-	>
-
 	<Navbar navLinks={navLinks} />
-
 	<main id="main" class="scroll-mt-28">
 		<section class="border-b border-slate-200 bg-white text-slate-900">
 			<div
@@ -71,32 +64,32 @@ const formatDate = (date: Date) =>
 								about in the contact form.
 							</p>
 						</div>
-				) : (
-					<div class="flex flex-col divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white">
-						{posts.map((post) => (
-							<a
-								class="flex flex-col gap-2 px-6 py-5 transition hover:bg-rose-50"
-								href={`/blog/${post.slug}`}
-							>
-								<p class="text-xs font-semibold uppercase tracking-[0.12em] text-rose-600">
-									{formatDate(post.data.pubDate)}
-								</p>
-								<p class="text-lg font-semibold text-slate-900">
-									{post.data.title}
-								</p>
-								<p class="text-sm text-slate-700">
-									{post.data.description}
-								</p>
-								{post.data.author && (
-									<p class="text-xs font-semibold uppercase tracking-[0.1em] text-slate-500">
-										By {post.data.author}
+					) : (
+						<div class="flex flex-col divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white">
+							{posts.map((post) => (
+								<a
+									class="flex flex-col gap-2 px-6 py-5 transition hover:bg-rose-50"
+									href={`/blog/${post.slug}`}
+								>
+									<p class="text-xs font-semibold uppercase tracking-[0.12em] text-rose-600">
+										{formatDate(post.data.pubDate)}
 									</p>
-								)}
-							</a>
-						))}
-					</div>
-				)
-			}
+									<p class="text-lg font-semibold text-slate-900">
+										{post.data.title}
+									</p>
+									<p class="text-sm text-slate-700">
+										{post.data.description}
+									</p>
+									{post.data.author && (
+										<p class="text-xs font-semibold uppercase tracking-[0.1em] text-slate-500">
+											By {post.data.author}
+										</p>
+									)}
+								</a>
+							))}
+						</div>
+					)
+				}
 			</div>
 		</section>
 	</main>
