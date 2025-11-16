@@ -1,0 +1,99 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import { navLinks } from "../../data/navLinks";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+	const posts = await getCollection("blog", ({ data }) => !data.draft);
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: { post },
+	}));
+}
+
+const { post } = Astro.props;
+
+const { Content } = await post.render();
+
+const formattedPubDate = post.data.pubDate.toLocaleDateString("en-US", {
+	month: "long",
+	day: "numeric",
+	year: "numeric",
+});
+
+const formattedUpdatedDate = post.data.updatedDate?.toLocaleDateString(
+	"en-US",
+	{
+		month: "long",
+		day: "numeric",
+		year: "numeric",
+	},
+);
+---
+
+<Layout
+	title={`${post.data.title} | Factum Performance and Wellness`}
+	description={post.data.description}
+>
+	<a
+		href="#main"
+		class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:bg-white/10 focus:text-white focus:px-4 focus:py-2 focus:rounded-md"
+		>Skip to Content</a
+	>
+
+	<Navbar navLinks={navLinks} />
+
+	<main id="main" class="scroll-mt-28">
+		<section class="border-b border-slate-200 bg-white text-slate-900">
+			<div
+				class="mx-auto flex max-w-6xl flex-col gap-5 px-4 py-16 sm:px-6 lg:px-0 lg:py-20"
+			>
+				<p
+					class="text-xs font-semibold uppercase tracking-[0.2em] text-rose-600"
+				>
+					Factum Blog
+				</p>
+				<h1 class="text-4xl font-semibold leading-tight sm:text-5xl">
+					{post.data.title}
+				</h1>
+				<div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+					<span>{formattedPubDate}</span>
+					{
+						formattedUpdatedDate && (
+							<>
+								<span aria-hidden="true" class="h-1 w-1 rounded-full bg-slate-300"></span>
+								<span>Updated {formattedUpdatedDate}</span>
+							</>
+						)
+					}
+					{
+						post.data.author && (
+							<>
+								<span aria-hidden="true" class="h-1 w-1 rounded-full bg-slate-300"></span>
+								<span>{post.data.author}</span>
+							</>
+						)
+					}
+					{
+						post.data.tags?.length && (
+							<div class="flex flex-wrap items-center gap-2">
+								{post.data.tags.map((tag) => (
+									<span class="rounded-full border border-rose-100 bg-rose-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-rose-700">
+										{tag}
+									</span>
+								))}
+							</div>
+						)
+					}
+				</div>
+			</div>
+		</section>
+
+		<section class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-0 lg:py-20">
+			<article class="prose prose-lg sm:prose-xl prose-slate prose-headings:text-slate-900 max-w-none">
+				<Content />
+			</article>
+		</section>
+	</main>
+</Layout>

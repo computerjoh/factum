@@ -1,8 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import logoImage from "../assets/logo.webp";
-
-type NavLink = { label: string; href: string };
+import type { NavLink } from "../data/navLinks";
 type Props = {
 	navLinks?: NavLink[];
 	instagramUrl?: string;
