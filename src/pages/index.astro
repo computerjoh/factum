@@ -4,10 +4,17 @@ import Navbar from "../components/Navbar.astro";
 import StaffGrid from "../components/StaffGrid.astro";
 import heroImage from "../assets/gym.webp";
 import staffPlaceholder from "../assets/staff-placeholder.png";
+import smallGroupTraining from "../assets/small-group-training.jpeg";
+import oneOnOne from "../assets/oneOnOne.webp";
+import groupTraining from "../assets/group-training.jpeg";
+import sportsNutrition from "../assets/sports-nutrition.jpg";
+import sportsPerformance from "../assets/sports-performance.webp";
+import healthAndWellness from "../assets/health-and-wellness.webp";
+import postRehab from "../assets/post-rehab-and-injury-prevention.webp";
 import { Image } from "astro:assets";
 
 const navLinks = [
-	{ label: "About", href: "#main" },
+	{ label: "About", href: "#about" },
 	{ label: "Services", href: "#services" },
 	{ label: "Facility", href: "#facility" },
 	{ label: "Staff", href: "#staff" },
@@ -16,32 +23,39 @@ const navLinks = [
 
 const services = [
 	{
-		title: "1:1 Training",
-		copy: "Work with a Certified Personal Trainer and receive individualized attention, expert guidance, and tailored workout plans to reach your personal goals.",
-	},
-	{
 		title: "Small Group Training",
-		copy: "Work with a Certified Trainer in a small group setting to push your limits, stay accountable, and celebrate successes as a team.",
+		copy: "Our small group training program is designed to create the best, well-rounded athlete possible. With groups of no more than 8 athletes, we are able to give specific cues and modifications to fit the athletes' needs, while being able to work out in a group environment. In all sports performance groups, we focus on mobility, activation, power, strength, hypertrophy and endurance. Along with that, there is a large focus on injury prevention and preventative care.",
+		image: smallGroupTraining,
 	},
 	{
-		title: "Sport Specific Training",
-		copy: "Work with a Certified Trainer for sport-specific 1:1 or small group sessions to maximize speed, build strength, and boost performance.",
+		title: "1 on 1 Personal Training",
+		copy: "Personal Training offers the most specific program possible for the athlete. We start by creating a needs analysis to determine what we need to work on the most, and then develop an in-depth program to fit the athletes' needs and goals. Within these programs, our coaches are able to spend more time breaking down compensation patterns and improper movement patterns to promote proper biomechanics and joint health. 1 on 1 sessions are 60 minutes long and are scheduled directly with your trainer.",
+		image: oneOnOne,
 	},
 	{
-		title: "Injury Rehabilitation",
-		copy: "Work with an Injury Rehabilitation Specialist to regain strength, mobility, and confidence.",
+		title: "Sports Nutrition",
+		copy: "Nutrition is one of the most overlooked parts of getting \"bigger faster stronger\"; it is also one of the easiest ways to boost your results quickly if it's done correctly. For that reason, at Factum, we focus on our athletes' nutrition to ensure we get the best results. Our nutrition program run by Dr. Francisco Padilla allows athletes the opportunity to maximize their results in the gym and achieve their goals faster.",
+		image: sportsNutrition,
 	},
 	{
-		title: "Pilates",
-		copy: "Work with a Certified Pilates Instructor to improve core strength, flexibility, and body awareness.",
+		title: "Team Training",
+		copy: "We take teams to the next level! Off-Season and In-season programs are available. Strength and conditioning programs have become a non negotiable for competitive teams across all sports. For our teams, we start with a day of intake testing using our Vald force plates and laser timers along with other metrics to produce baseline numbers. Our goal is to not only create faster and stronger athletes, but to also create an environment based around teamwork and discipline.",
+		image: groupTraining,
 	},
 	{
-		title: "Nutrition",
-		copy: "Work with a Registered Dietician and Certified Sports Nutritionist to receive personalized nutrition guidance tailored to your goals.",
+		title: "Sports Performance",
+		copy: "We give athletes a blueprint to become the strongest and healthiest athlete they can be. Only 2% of high school athletes compete at the collegiate level. We want to help you achieve your goals and not be part of the 98%. We take a detailed approach to programming to fit the athletes' needs and goals. We also focus on injury prevention and longevity, specifically in overhead/throwing athletes, and knee injury reduction overall. Learn more",
+		image: sportsPerformance,
 	},
 	{
-		title: "Counselling",
-		copy: "Work with a Licensed Professional Counselor.",
+		title: "Health and Wellness",
+		copy: "At Factum, we are here to help you reach your goals in an exciting, welcoming and competitive environment. We will create a plan with you to get you to your goals, and build a healthy lifestyle to promote long-term success. We will use a mix of mobility, strength, metabolic health, nutrition and corrective exercise to reach your goals! Our customers love coming in knowing they will leave the gym feeling better than when they walked in. Learn more",
+		image: healthAndWellness,
+	},
+	{
+		title: "Post Rehab and injury Prevention",
+		copy: 'Returning from a serious injury can be a complicated and stressful process. We provide you the best opportunity to come back "better, faster, and stronger" than you were pre-injury. Although we specialize in ACL and knee rehabs, we have trainers that are experienced with all joints and protocols for different injuries. Although we can\'t avoid all injuries, preventative health and injury prevention measures can help avoid as many non-contact injuries as possible.',
+		image: postRehab,
 	},
 ];
 
@@ -150,6 +164,36 @@ const gallery = Array.from({ length: 6 }, (_, i) => ({
 		</section>
 
 		<section
+			id="about"
+			class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-0"
+		>
+			<div class="space-y-4">
+				<p
+					class="text-xs font-semibold uppercase tracking-[0.2em] text-rose-600"
+				>
+					About Factum Performance and Wellness
+				</p>
+				<h2 class="text-3xl font-semibold text-slate-900 sm:text-4xl">
+					About Factum Performance and wellness
+				</h2>
+				<p class="text-lg text-slate-700 leading-relaxed">
+					Factum Performance and Wellness is home to a dedicated team
+					of professionals passionate about holistic health. Our
+					diverse team includes trainers, coaches, dietitians,
+					counselors, and Pilates instructors, ensuring comprehensive
+					support for all wellness needs. We prioritize a friendly,
+					welcoming atmosphere where every client feels supported and
+					empowered. Through close collaboration, we help clients
+					achieve specific goals, whether it's improving physique,
+					recovering from injury with our FORTIFY program, or
+					enhancing athletic performance. At Factum, our goal is for
+					everyone who walks through our doors to leave smiling and
+					closer to their personal wellness objectives.
+				</p>
+			</div>
+		</section>
+
+		<section
 			id="services"
 			class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-0"
 		>
@@ -169,28 +213,42 @@ const gallery = Array.from({ length: 6 }, (_, i) => ({
 					</h2>
 				</div>
 			</div>
-			<div
-				class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
-			>
+			<div class="mt-10 grid grid-cols-1 gap-6">
 				{
-					services.map((service) => (
-						<div class="flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white p-0 shadow-lg shadow-slate-200 transition hover:-translate-y-1 hover:border-rose-300 hover:shadow-rose-200/80">
-							<Image
-								src={`https://placehold.co/600x320?text=${encodeURIComponent(service.title)}`}
-								alt={service.title}
-								width={600}
-								height={320}
-								class="w-full h-auto object-cover rounded-lg"
-							/>
-							<div class="p-6 space-y-3">
-								<p class="text-sm font-semibold uppercase tracking-[0.2em] text-rose-600">
+					services.map((service, index) => (
+						<article class="flex flex-col gap-4 rounded-3xl border border-slate-200 bg-white p-5 shadow-lg shadow-slate-200 transition hover:-translate-y-1 hover:border-rose-300 hover:shadow-rose-200/80 sm:flex-row sm:items-start">
+							{service.image && (
+								<div class="w-full sm:w-56 sm:flex-none">
+									{typeof service.image === "string" ? (
+										<img
+											src={service.image}
+											alt={service.title}
+											class="h-full w-full rounded-2xl object-cover shadow-sm"
+											loading={
+												index === 0 ? "eager" : "lazy"
+											}
+										/>
+									) : (
+										<Image
+											src={service.image}
+											alt={service.title}
+											width={520}
+											height={320}
+											class="h-full w-full rounded-2xl object-cover shadow-sm"
+											loading={
+												index === 0 ? "eager" : "lazy"
+											}
+										/>
+									)}
+								</div>
+							)}
+							<div class="flex-1 space-y-3 text-base leading-relaxed text-slate-700">
+								<p class="text-xl font-semibold text-slate-900">
 									{service.title}
 								</p>
-								<p class="text-sm text-slate-700">
-									{service.copy}
-								</p>
+								<p>{service.copy}</p>
 							</div>
-						</div>
+						</article>
 					))
 				}
 			</div>
