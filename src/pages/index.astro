@@ -256,7 +256,7 @@ const gallery = Array.from({ length: 6 }, (_, i) => ({
 
 		<section
 			id="facility"
-			class="mx-auto max-w-6xl px-4 pb-8 sm:px-6 lg:px-0"
+			class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-0"
 		>
 			<div
 				class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between"
@@ -331,53 +331,63 @@ const gallery = Array.from({ length: 6 }, (_, i) => ({
 		</section>
 
 		<section
-			class="border-y border-slate-200 bg-slate-50 py-16"
+			class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-0"
 			id="contact"
 		>
-			<div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-0">
-				<div
-					class="rounded-3xl border border-slate-200 bg-white p-8 shadow-2xl shadow-rose-100"
-				>
-					<div
-						class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between"
-					>
-						<div class="space-y-3">
-							<p
-								class="text-xs font-semibold uppercase tracking-[0.2em] text-rose-600"
-							>
-								Contact
+			<div
+				class="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg shadow-rose-100 sm:p-10"
+			>
+				<div class="grid gap-8 md:grid-cols-[1.2fr_1fr] md:items-center">
+					<div class="space-y-4">
+						<p
+							class="text-xs font-semibold uppercase tracking-[0.2em] text-rose-600"
+						>
+							Contact
+						</p>
+						<h2 class="text-3xl font-semibold text-slate-900 sm:text-4xl">
+							Factum Performance and Wellness
+						</h2>
+						<div class="space-y-2 text-base text-slate-700 leading-relaxed">
+							<p class="font-semibold text-slate-900">
+								Highland place 1
 							</p>
-							<h2
-								class="text-3xl font-semibold text-slate-900 sm:text-4xl"
+							<p>
+								8085 South Chester Street Unit 240<br />
+								Centennial, Colorado 80112
+							</p>
+						</div>
+					</div>
+					<div
+						class="space-y-4 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-base text-slate-800"
+					>
+						<p class="font-semibold text-slate-900">Get in touch</p>
+						<div class="space-y-2">
+							<a
+								class="block text-rose-600 hover:text-rose-700"
+								href="mailto:FactumPW@gmail.com"
 							>
-								Factum Performance and Wellness
-							</h2>
-							<div class="space-y-2 text-sm text-slate-700">
-								<p class="font-semibold text-slate-900">
-									Highland place 1
-								</p>
-								<p>
-									8085 South Chester Street Unit 240<br />
-									Centennial, Colorado 80112
-								</p>
-							</div>
-							<div class="space-y-1 text-sm text-slate-700">
-								<p class="font-semibold text-slate-900">
-									CONTACT
-								</p>
-								<a
-									class="block text-rose-600 hover:text-rose-700"
-									href="mailto:FactumPW@gmail.com"
-								>
-									FactumPW@gmail.com
-								</a>
-								<a
-									class="block text-rose-600 hover:text-rose-700"
-									href="tel:+18603243373"
-								>
-									(860) 324 3373
-								</a>
-							</div>
+								FactumPW@gmail.com
+							</a>
+							<a
+								class="block text-rose-600 hover:text-rose-700"
+								href="tel:+18603243373"
+							>
+								(860) 324 3373
+							</a>
+						</div>
+						<div class="flex flex-wrap gap-3">
+							<a
+								class="inline-flex items-center justify-center rounded-full bg-rose-600 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-rose-500/25 transition hover:bg-rose-500"
+								href="mailto:FactumPW@gmail.com"
+							>
+								Email us
+							</a>
+							<a
+								class="inline-flex items-center justify-center rounded-full border border-rose-200 bg-white px-5 py-2 text-sm font-semibold text-rose-600 transition hover:border-rose-300 hover:text-rose-700"
+								href="tel:+18603243373"
+							>
+								Call us
+							</a>
 						</div>
 					</div>
 				</div>
