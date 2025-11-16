@@ -2,9 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import StaffGrid from "../components/StaffGrid.astro";
-import { Image } from "astro:assets";
 import heroImage from "../assets/gym.webp";
 import staffPlaceholder from "../assets/staff-placeholder.png";
+import { Image } from "astro:assets";
 
 const navLinks = [
 	{ label: "About", href: "#main" },
@@ -97,16 +97,16 @@ const gallery = Array.from({ length: 6 }, (_, i) => ({
 		instagramHandle="@factum_performance"
 	/>
 	<main id="main">
-			<section
-				class="relative isolate overflow-hidden border-b border-slate-200"
-			>
-				<Image
-					src={heroImage}
-					alt="Athlete training at the gym"
-					class="absolute inset-0 h-full w-full object-cover"
-					loading="eager"
-					sizes="100vw"
-				/>
+		<section
+			class="relative isolate overflow-hidden border-b border-slate-200"
+		>
+			<Image
+				src={heroImage}
+				alt="Athlete training at the gym"
+				class="absolute inset-0 h-full w-full object-cover"
+				loading="eager"
+				sizes="100vw"
+			/>
 			<div
 				class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/10"
 			>
@@ -175,11 +175,12 @@ const gallery = Array.from({ length: 6 }, (_, i) => ({
 				{
 					services.map((service) => (
 						<div class="flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white p-0 shadow-lg shadow-slate-200 transition hover:-translate-y-1 hover:border-rose-300 hover:shadow-rose-200/80">
-							<img
+							<Image
 								src={`https://placehold.co/600x320?text=${encodeURIComponent(service.title)}`}
 								alt={service.title}
-								class="h-44 w-full object-cover"
-								loading="lazy"
+								width={600}
+								height={320}
+								class="w-full h-auto object-cover rounded-lg"
 							/>
 							<div class="p-6 space-y-3">
 								<p class="text-sm font-semibold uppercase tracking-[0.2em] text-rose-600">
@@ -224,10 +225,12 @@ const gallery = Array.from({ length: 6 }, (_, i) => ({
 				{
 					gallery.map((item) => (
 						<div class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg shadow-rose-100">
-							<img
+							<Image
 								src={item.src}
 								alt={item.label}
-								class="h-48 w-full object-cover"
+								width={800}
+								height={500}
+								class="w-full h-auto object-cover rounded-lg"
 								loading="lazy"
 							/>
 							<div class="p-4">
@@ -241,11 +244,11 @@ const gallery = Array.from({ length: 6 }, (_, i) => ({
 			</div>
 		</section>
 
-			<section
-				class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-0"
-				id="staff"
-			>
-				<div
+		<section
+			class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-0"
+			id="staff"
+		>
+			<div
 				class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between"
 			>
 				<div>
@@ -264,12 +267,10 @@ const gallery = Array.from({ length: 6 }, (_, i) => ({
 					Certified. Caring. Ready to push you.
 				</p>
 			</div>
-				<div
-					class="mt-10"
-				>
-					<StaffGrid staff={staff} />
-				</div>
-			</section>
+			<div class="mt-10">
+				<StaffGrid staff={staff} />
+			</div>
+		</section>
 
 		<section
 			class="border-y border-slate-200 bg-slate-50 py-16"

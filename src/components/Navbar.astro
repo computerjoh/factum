@@ -1,9 +1,18 @@
 ---
+import { Image } from "astro:assets";
+
+type NavLink = { label: string; href: string };
+type Props = {
+	navLinks?: NavLink[];
+	instagramUrl?: string;
+	instagramHandle?: string;
+};
+
 const {
 	navLinks = [],
 	instagramUrl = "https://www.instagram.com/factum_performance/",
 	instagramHandle = "@factum_performance",
-} = Astro.props;
+} = Astro.props as Props;
 ---
 
 <header
@@ -16,11 +25,12 @@ const {
 			href="#main"
 			class="flex items-center gap-3 py-3 rounded-full transition hover:opacity-80"
 		>
-			<img
+			<Image
 				src="/FPW+Logo-Photoroom.png-Photoroom.webp"
 				alt="Factum logo"
-				class="h-12 w-25"
-				loading="lazy"
+				width={448}
+				height={169}
+				class="h-12 w-auto"
 			/>
 			<div class="block">
 				<p class="text-sm font-semibold text-slate-900">Factum</p>
