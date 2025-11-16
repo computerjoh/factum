@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import logoImage from "../assets/logo.webp";
 
 type NavLink = { label: string; href: string };
 type Props = {
@@ -26,7 +27,7 @@ const {
 			class="flex items-center gap-3 py-3 rounded-full transition hover:opacity-80"
 		>
 			<Image
-				src="/FPW+Logo-Photoroom.png-Photoroom.webp"
+				src={logoImage}
 				alt="Factum logo"
 				width={448}
 				height={169}
