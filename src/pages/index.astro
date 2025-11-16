@@ -130,12 +130,12 @@ const gallery = Array.from({ length: 6 }, (_, i) => ({
 			>
 				<div class="max-w-3xl space-y-6 text-white">
 					<p
-						class="inline-flex items-center gap-3 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em]"
+						class="inline-flex flex-col items-start gap-1 rounded-2xl border border-white/30 bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] sm:flex-row sm:items-center sm:gap-3 sm:text-xs sm:tracking-[0.2em]"
 					>
-						Achieve greatness
+						<span>Achieve greatness</span>
 						<span class="h-1.5 w-1.5 rounded-full bg-rose-400"
 						></span>
-						Fortify your potential
+						<span>Fortify your potential</span>
 					</p>
 					<h1
 						class="text-4xl font-semibold leading-tight sm:text-5xl"
@@ -273,9 +273,6 @@ const gallery = Array.from({ length: 6 }, (_, i) => ({
 						Spaces built to perform
 					</h2>
 				</div>
-				<p class="text-sm text-slate-600">
-					Placeholder imagery now; swap in your facility shots.
-				</p>
 			</div>
 			<div
 				class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
@@ -337,17 +334,23 @@ const gallery = Array.from({ length: 6 }, (_, i) => ({
 			<div
 				class="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg shadow-rose-100 sm:p-10"
 			>
-				<div class="grid gap-8 md:grid-cols-[1.2fr_1fr] md:items-center">
+				<div
+					class="grid gap-8 md:grid-cols-[1.2fr_1fr] md:items-center"
+				>
 					<div class="space-y-4">
 						<p
 							class="text-xs font-semibold uppercase tracking-[0.2em] text-rose-600"
 						>
 							Contact
 						</p>
-						<h2 class="text-3xl font-semibold text-slate-900 sm:text-4xl">
+						<h2
+							class="text-3xl font-semibold text-slate-900 sm:text-4xl"
+						>
 							Factum Performance and Wellness
 						</h2>
-						<div class="space-y-2 text-base text-slate-700 leading-relaxed">
+						<div
+							class="space-y-2 text-base text-slate-700 leading-relaxed"
+						>
 							<p class="font-semibold text-slate-900">
 								Highland place 1
 							</p>
