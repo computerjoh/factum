@@ -3,7 +3,7 @@ title: "Lifelong Fitness - the journey begins now!"
 description: ""
 pubDate: 2024-01-08
 author: "Adam McLaughlin"
-tags: ["nutrition", "performance"]
+tags: ["lifelong fitness", "new year resolutions", "exercise motivation", "strength training", "healthy habits", "weight loss tips", "wellness"]
 ---
 Every calendar year begins with tons of celebration, huge displays of fireworks, pounds of confetti, and lists upon lists of New Year’s resolutions.  These resolutions come in all shapes and sizes, but some of them that always seem to be at the top of everyone's list are: "lose weight", "get in shape", "get stronger", or "get your beach body ready for the first day of summer".  Isn't it great that everyone strives to "get in shape"?  The answer is ABSOLUTELY!  But why wait until January 1st to strive for a better you. If you are truly committed to bettering yourself physically, then stop waiting and begin this lifelong journey today!  
 

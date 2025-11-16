@@ -3,7 +3,7 @@ title: "5 Daily changes to immediately improve your health"
 description: ""
 pubDate: 2024-01-12
 author: "Adam McLaughlin"
-tags: ["nutrition", "performance"]
+tags: ["healthy habits", "daily wellness", "office movement", "hydration", "walking", "active lifestyle", "weight management"]
 ---
 On a daily basis, how would you rate your health?  Would you give yourself a good grade? If the answer is no, don’t fret, these tips can help.  If the answer is yes, keep doing what you are doing and then take some extra steps to improve your life even more!  
 

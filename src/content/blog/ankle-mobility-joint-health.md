@@ -3,7 +3,7 @@ title: "Ankle mobility - how it relates to overall joint health"
 description: ""
 pubDate: 2024-01-11
 author: "Adam McLaughlin"
-tags: ["nutrition", "performance"]
+tags: ["ankle mobility", "joint health", "basketball training", "injury prevention", "movement mechanics", "high top shoes", "athletic performance"]
 ---
 It is that time of year again when winter sports seem to be taking over our lives. For many of us, that is music to our ears because that means basketball season has arrived.  All of the hard work from the off-season will be shown to coaches, early morning shoot around’s turn into Friday night rivalry games, and all of the conditioning is finally paying off. However, ankle mobility is something that always seems to be overlooked with basketball player’s health and preparation.  
 

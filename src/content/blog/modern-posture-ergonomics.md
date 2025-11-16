@@ -3,7 +3,7 @@ title: "The Modern Posture"
 description: ""
 pubDate: 2024-01-09
 author: "Adam McLaughlin"
-tags: ["nutrition", "performance"]
+tags: ["posture correction", "ergonomics", "sedentary lifestyle", "desk job health", "mobility training", "back pain relief", "movement"]
 ---
 The human body is a complex muscular chain that acts as a mechanism that can perform incredible tasks, endure painful and taxing stressors, and adapt to operate in adverse situations.  Unfortunately, for most people, all we ask our bodies to do is sit in a chair all day and “take a long walk” to the car after it’s all over.  Children sit in classrooms for hours on end while their physical education programs are being cut.  Adults sit at their desk all day typing away on their keyboard and don’t have time for a simple mid day walk.  
 
