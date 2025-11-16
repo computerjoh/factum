@@ -1,7 +1,7 @@
 ---
 title: "Lifelong Fitness - the journey begins now!"
 description: ""
-pubDate: 2024-01-08
+pubDate: 2025-01-08
 author: "Adam McLaughlin"
 tags: ["lifelong fitness", "new year resolutions", "exercise motivation", "strength training", "healthy habits", "weight loss tips", "wellness"]
 ---

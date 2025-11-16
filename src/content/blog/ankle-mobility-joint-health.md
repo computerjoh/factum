@@ -1,7 +1,7 @@
 ---
 title: "Ankle mobility - how it relates to overall joint health"
 description: ""
-pubDate: 2024-01-11
+pubDate: 2025-01-11
 author: "Adam McLaughlin"
 tags: ["ankle mobility", "joint health", "basketball training", "injury prevention", "movement mechanics", "high top shoes", "athletic performance"]
 ---

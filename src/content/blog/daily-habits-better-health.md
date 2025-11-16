@@ -1,7 +1,7 @@
 ---
 title: "5 Daily changes to immediately improve your health"
 description: ""
-pubDate: 2024-01-12
+pubDate: 2025-01-12
 author: "Adam McLaughlin"
 tags: ["healthy habits", "daily wellness", "office movement", "hydration", "walking", "active lifestyle", "weight management"]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "The Modern Posture"
 description: ""
-pubDate: 2024-01-09
+pubDate: 2025-01-09
 author: "Adam McLaughlin"
 tags: ["posture correction", "ergonomics", "sedentary lifestyle", "desk job health", "mobility training", "back pain relief", "movement"]
 ---
