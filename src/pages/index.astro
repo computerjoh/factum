@@ -11,6 +11,10 @@ import sportsNutrition from "../assets/sports-nutrition.jpg";
 import sportsPerformance from "../assets/sports-performance.webp";
 import healthAndWellness from "../assets/health-and-wellness.webp";
 import postRehab from "../assets/post-rehab-and-injury-prevention.webp";
+import gym1 from "../assets/gym-1.png";
+import gym2 from "../assets/gym-2.png";
+import gym3 from "../assets/gym-3.png";
+import gym4 from "../assets/gym-4.png";
 import { Image } from "astro:assets";
 import { navLinks } from "../data/navLinks";
 
@@ -82,10 +86,12 @@ const staff = [
 	},
 ];
 
-const gallery = Array.from({ length: 6 }, (_, i) => ({
-	src: `https://placehold.co/800x500?text=Facility+${i + 1}`,
-	label: `Facility ${i + 1}`,
-}));
+const gallery = [
+	{ src: gym1, label: "Main lifting floor" },
+	{ src: gym2, label: "Full rack lineup" },
+	{ src: gym3, label: "Conditioning zone" },
+	{ src: gym4, label: "Cable and strength area" },
+];
 ---
 
 <Layout
@@ -260,25 +266,20 @@ const gallery = Array.from({ length: 6 }, (_, i) => ({
 			<div
 				class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
 			>
-				{
-					gallery.map((item) => (
-						<div class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg shadow-rose-100">
-							<Image
-								src={item.src}
-								alt={item.label}
-								width={800}
-								height={500}
-								class="w-full h-auto object-cover rounded-lg"
-								loading="lazy"
-							/>
-							<div class="p-4">
-								<p class="text-sm font-semibold text-slate-800">
-									{item.label}
-								</p>
-							</div>
-						</div>
-					))
-				}
+			{gallery.map((item) => (
+				<div class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg shadow-rose-100">
+					<div class="aspect-[4/3] w-full overflow-hidden">
+						<Image
+							src={item.src}
+							alt={item.label}
+							width={item.src.width}
+							height={item.src.height}
+							class="h-full w-full rounded-none object-cover"
+							loading="lazy"
+						/>
+					</div>
+				</div>
+			))}
 			</div>
 		</section>
 
