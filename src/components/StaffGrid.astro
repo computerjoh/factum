@@ -1,7 +1,11 @@
 ---
 import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
 
-const { staff = [] } = Astro.props;
+type StaffMember = CollectionEntry<"staff">["data"];
+type Props = { staff: StaffMember[] };
+
+const { staff } = Astro.props as Props;
 ---
 
 <div

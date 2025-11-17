@@ -1,90 +1,25 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/Navbar.astro";
-import StaffGrid from "../components/StaffGrid.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
 import heroImage from "../assets/gym.webp";
-import staffPlaceholder from "../assets/staff-placeholder.png";
-import smallGroupTraining from "../assets/small-group-training.jpeg";
-import oneOnOne from "../assets/oneOnOne.webp";
-import groupTraining from "../assets/group-training.jpeg";
-import sportsNutrition from "../assets/sports-nutrition.jpg";
-import sportsPerformance from "../assets/sports-performance.webp";
-import healthAndWellness from "../assets/health-and-wellness.webp";
-import postRehab from "../assets/post-rehab-and-injury-prevention.webp";
 import gym1 from "../assets/gym-1.png";
 import gym2 from "../assets/gym-2.png";
 import gym3 from "../assets/gym-3.png";
 import gym4 from "../assets/gym-4.png";
-import { Image } from "astro:assets";
+import Navbar from "../components/Navbar.astro";
+import StaffGrid from "../components/StaffGrid.astro";
 import { navLinks } from "../data/navLinks";
+import Layout from "../layouts/Layout.astro";
 
-const services = [
-	{
-		title: "Small Group Training",
-		copy: "Our small group training program is designed to create the best, well-rounded athlete possible. With groups of no more than 8 athletes, we are able to give specific cues and modifications to fit the athletes' needs, while being able to work out in a group environment. In all sports performance groups, we focus on mobility, activation, power, strength, hypertrophy and endurance. Along with that, there is a large focus on injury prevention and preventative care.",
-		image: smallGroupTraining,
-	},
-	{
-		title: "1 on 1 Personal Training",
-		copy: "Personal Training offers the most specific program possible for the athlete. We start by creating a needs analysis to determine what we need to work on the most, and then develop an in-depth program to fit the athletes' needs and goals. Within these programs, our coaches are able to spend more time breaking down compensation patterns and improper movement patterns to promote proper biomechanics and joint health. 1 on 1 sessions are 60 minutes long and are scheduled directly with your trainer.",
-		image: oneOnOne,
-	},
-	{
-		title: "Sports Nutrition",
-		copy: "Nutrition is one of the most overlooked parts of getting \"bigger faster stronger\"; it is also one of the easiest ways to boost your results quickly if it's done correctly. For that reason, at Factum, we focus on our athletes' nutrition to ensure we get the best results. Our nutrition program run by Dr. Francisco Padilla allows athletes the opportunity to maximize their results in the gym and achieve their goals faster.",
-		image: sportsNutrition,
-	},
-	{
-		title: "Team Training",
-		copy: "We take teams to the next level! Off-Season and In-season programs are available. Strength and conditioning programs have become a non negotiable for competitive teams across all sports. For our teams, we start with a day of intake testing using our Vald force plates and laser timers along with other metrics to produce baseline numbers. Our goal is to not only create faster and stronger athletes, but to also create an environment based around teamwork and discipline.",
-		image: groupTraining,
-	},
-	{
-		title: "Sports Performance",
-		copy: "We give athletes a blueprint to become the strongest and healthiest athlete they can be. Only 2% of high school athletes compete at the collegiate level. We want to help you achieve your goals and not be part of the 98%. We take a detailed approach to programming to fit the athletes' needs and goals. We also focus on injury prevention and longevity, specifically in overhead/throwing athletes, and knee injury reduction overall. Learn more",
-		image: sportsPerformance,
-	},
-	{
-		title: "Health and Wellness",
-		copy: "At Factum, we are here to help you reach your goals in an exciting, welcoming and competitive environment. We will create a plan with you to get you to your goals, and build a healthy lifestyle to promote long-term success. We will use a mix of mobility, strength, metabolic health, nutrition and corrective exercise to reach your goals! Our customers love coming in knowing they will leave the gym feeling better than when they walked in. Learn more",
-		image: healthAndWellness,
-	},
-	{
-		title: "Post Rehab and injury Prevention",
-		copy: 'Returning from a serious injury can be a complicated and stressful process. We provide you the best opportunity to come back "better, faster, and stronger" than you were pre-injury. Although we specialize in ACL and knee rehabs, we have trainers that are experienced with all joints and protocols for different injuries. Although we can\'t avoid all injuries, preventative health and injury prevention measures can help avoid as many non-contact injuries as possible.',
-		image: postRehab,
-	},
-];
+const services = (await getCollection("services"))
+	.sort((a, b) => a.data.order - b.data.order)
+	.map(({ data }) => data);
+
+const staff = (await getCollection("staff"))
+	.sort((a, b) => a.data.order - b.data.order)
+	.map(({ data }) => data);
 
 const slides = Array.from({ length: 8 }, (_, i) => `Slide ${i + 1}`);
-
-const staff = [
-	{
-		name: "Adam McLaughlin",
-		title: "Co-Owner and Certified Trainer",
-		photo: staffPlaceholder,
-	},
-	{
-		name: "Tyler Havens",
-		title: "Co-Owner and CertifiedTrainer",
-		photo: staffPlaceholder,
-	},
-	{
-		name: "Francisco Padilla",
-		title: "Registered Dietician and Certified Sports Nutritionist",
-		photo: staffPlaceholder,
-	},
-	{
-		name: "Kara Marshall",
-		title: "Licensed Professional Counselor",
-		photo: staffPlaceholder,
-	},
-	{
-		name: "Tayler Schaller",
-		title: "Certified Personal Trainer",
-		photo: staffPlaceholder,
-	},
-];
 
 const gallery = [
 	{ src: gym1, label: "Main lifting floor" },
@@ -115,7 +50,7 @@ const gallery = [
 				sizes="100vw"
 			/>
 			<div
-				class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/10"
+				class="absolute inset-0 bg-linear-to-r from-black/70 via-black/50 to-black/10"
 			>
 			</div>
 			<div
@@ -208,7 +143,7 @@ const gallery = [
 					services.map((service, index) => (
 						<article class="relative flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg shadow-slate-200/80">
 							{service.image && (
-								<div class="relative aspect-[4/3] overflow-hidden">
+								<div class="relative aspect-4/3 overflow-hidden">
 									{typeof service.image === "string" ? (
 										<img
 											src={service.image}
@@ -230,7 +165,7 @@ const gallery = [
 											}
 										/>
 									)}
-									<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-70" />
+									<div class="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent opacity-70" />
 								</div>
 							)}
 							<div class="flex flex-1 flex-col gap-3 p-5 text-sm leading-relaxed text-slate-700">
@@ -266,20 +201,22 @@ const gallery = [
 			<div
 				class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
 			>
-			{gallery.map((item) => (
-				<div class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg shadow-rose-100">
-					<div class="aspect-[4/3] w-full overflow-hidden">
-						<Image
-							src={item.src}
-							alt={item.label}
-							width={item.src.width}
-							height={item.src.height}
-							class="h-full w-full rounded-none object-cover"
-							loading="lazy"
-						/>
-					</div>
-				</div>
-			))}
+				{
+					gallery.map((item) => (
+						<div class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg shadow-rose-100">
+							<div class="aspect-4/3 w-full overflow-hidden">
+								<Image
+									src={item.src}
+									alt={item.label}
+									width={item.src.width}
+									height={item.src.height}
+									class="h-full w-full rounded-none object-cover"
+									loading="lazy"
+								/>
+							</div>
+						</div>
+					))
+				}
 			</div>
 		</section>
 
